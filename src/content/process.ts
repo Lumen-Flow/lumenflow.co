@@ -36,7 +36,7 @@ export const processSteps = [
   },
 ] as const satisfies readonly ProcessStep[];
 
-export const workingPrinciples = [
+export const workingPrinciples: readonly WorkingPrinciple[] = [
   {
     title: "Direct Communication",
     description:
@@ -53,4 +53,4 @@ export const workingPrinciples = [
   {
     title: "Designed to keep working",
   },
-] as const satisfies readonly WorkingPrinciple[];
+];

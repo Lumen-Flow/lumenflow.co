@@ -5,6 +5,8 @@ import { siteConfig } from "@/content/site";
 
 import { apfelGrotezk, apfelGrotezkBrukt, plusJakartaSans } from "./fonts";
 import "./globals.css";
+import "./scrollbar.css";
+import { ClosingSection } from "@/components/sections/closing-section";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,6 +53,7 @@ export default function RootLayout({
       >
         <AnimatedHeader />
         <main className="flex-1 bg-cool-forest">{children}</main>
+        <ClosingSection />
       </body>
     </html>
   );
