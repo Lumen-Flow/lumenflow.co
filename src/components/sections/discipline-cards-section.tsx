@@ -101,8 +101,8 @@ function animateCard(card: HTMLAnchorElement, active: boolean) {
 
 export function DisciplineCardsSection() {
   return (
-    <section className="h-[100vh] overflow-hidden bg-cool-frost text-abyss-navy">
-      <div className="page-gutter flex h-full flex-col py-[clamp(1.25rem,4vh,2.75rem)]">
+    <section className="h-[120vh] overflow-hidden bg-cool-frost text-abyss-navy">
+      <div className="page-gutter flex h-full flex-col justify-evenly ">
         <div className="h-[65vh] min-h-0 flex-none overflow-x-auto overscroll-x-contain pb-3 md:max-h-[40rem] md:overflow-visible md:pb-0">
           <div className="grid h-full min-w-max auto-cols-[78vw] grid-flow-col gap-4 sm:auto-cols-[50vw] md:min-w-0 md:auto-cols-auto md:grid-flow-row md:grid-cols-3 md:gap-[clamp(1.25rem,2.5vw,1rem)]">
             {disciplineCards.map((card) => (

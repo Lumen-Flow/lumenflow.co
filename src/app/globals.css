@@ -40,12 +40,13 @@
 
 html {
   min-height: 100%;
+  background-color: var(--cool-frost);
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background-color: var(--cool-frost);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), sans-serif;
   -webkit-font-smoothing: antialiased;

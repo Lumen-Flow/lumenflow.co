@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type AnimationSnapshot = {
@@ -24,6 +25,7 @@ type BlurTextProps = {
   stepDuration?: number;
   wrap?: boolean;
   trigger?: "in-view" | "hover";
+  style?: CSSProperties;
 };
 
 function buildKeyframes(
@@ -52,6 +54,7 @@ export function BlurText({
   stepDuration = 0.35,
   wrap = true,
   trigger = "in-view",
+  style,
 }: BlurTextProps) {
   const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
@@ -138,7 +141,11 @@ export function BlurText({
     <span
       ref={ref}
       className={className}
-      style={{ display: "flex", flexWrap: wrap ? "wrap" : "nowrap" }}
+      style={{
+        display: "flex",
+        flexWrap: wrap ? "wrap" : "nowrap",
+        ...style,
+      }}
     >
       {elements.map((segment, index) => (
         <motion.span
