@@ -130,11 +130,20 @@ canvas {
 }
 
 .section-spacing {
-  padding-block: clamp(4rem, 10vw, 8rem);
+  padding-top: clamp(8rem, 14vw, 11rem);
+  padding-bottom: clamp(4rem, 10vw, 8rem);
 }
 
 .text-balance {
   text-wrap: balance;
+}
+
+@media (max-width: 39.999rem) {
+  [data-hero-cta] {
+    min-height: 2.5rem;
+    padding-inline: 1rem;
+    font-size: 0.75rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

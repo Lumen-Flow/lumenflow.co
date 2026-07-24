@@ -1,0 +1,132 @@
+.animated-site-header.fluid-glass-surface {
+  background: rgb(240 242 245 / 6%);
+  will-change: width, background-color, border-color, box-shadow;
+}
+
+.animated-site-header__ripple {
+  /* Temporarily disabled while the ripple treatment is being revised. */
+  display: none;
+  position: absolute;
+  top: -95%;
+  bottom: -95%;
+  left: -34%;
+  z-index: 0;
+  width: 34%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgb(200 255 0 / 38%) 0%,
+      rgb(200 255 0 / 18%) 22%,
+      rgb(240 242 245 / 13%) 42%,
+      transparent 70%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 8%,
+      rgb(240 242 245 / 9%) 34%,
+      rgb(200 255 0 / 16%) 50%,
+      rgb(240 242 245 / 8%) 66%,
+      transparent 92%
+    );
+  filter: blur(5px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.animated-site-header__ripple::before,
+.animated-site-header__ripple::after {
+  position: absolute;
+  border-radius: inherit;
+  content: "";
+}
+
+.animated-site-header__ripple::before {
+  inset: 18% 22%;
+  border-right: 1px solid rgb(200 255 0 / 34%);
+  border-left: 1px solid rgb(240 242 245 / 18%);
+  box-shadow: 0 0 24px rgb(200 255 0 / 14%);
+}
+
+.animated-site-header__ripple::after {
+  inset: 30% 34%;
+  border-right: 1px solid rgb(240 242 245 / 28%);
+  border-left: 1px solid rgb(200 255 0 / 22%);
+}
+
+.animated-contact {
+  z-index: 20;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  background: var(--volt-time);
+  color: var(--abyss-navy);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+  will-change: width, transform;
+}
+
+.animated-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgb(200 255 0 / 22%);
+}
+
+.animated-contact__label,
+.animated-contact__icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: opacity, transform;
+}
+
+.animated-contact__label {
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.animated-contact__icon {
+  z-index: 2;
+  opacity: 0;
+  translate: -1px 1px;
+  transform: translateY(-170%) scale(0.75);
+  visibility: hidden;
+}
+
+.animated-contact__icon svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--abyss-navy);
+  fill: none;
+  stroke: var(--abyss-navy);
+}
+
+.animated-contact[data-scrolled="true"] {
+  box-shadow:
+    0 0 0 1px rgb(200 255 0 / 16%),
+    0 8px 24px rgb(200 255 0 / 22%);
+}
+
+.animated-contact[data-scrolled="true"] .animated-contact__icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.animated-site-header .site-nav-item {
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-site-header__ripple {
+    display: none;
+  }
+}

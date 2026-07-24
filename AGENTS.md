@@ -1,5 +1,11 @@
 # Lumen&Flow Website
 
+## Command policy
+
+- Do not run pnpm commands, shell commands, terminal commands, scripts, builds, tests, linters, formatters, type checks, or validation commands unless the user explicitly authorizes commands in the current request.
+- Use direct file-editing tools for requested changes without invoking commands.
+- When commands are not authorized, clearly report that validation was not run because of this policy.
+
 ## Stack and workflow
 
 - Use pnpm only and Node.js 22.
@@ -28,7 +34,7 @@
 
 ## Validation
 
-Run:
+The standard validation commands are:
 
 ```bash
 pnpm lint
@@ -37,7 +43,7 @@ pnpm format:check
 pnpm build
 ```
 
-Do not claim a command passed unless it was run.
+Do not run these or any other commands unless the user explicitly authorizes commands in the current request. Do not claim a command passed unless it was run.
 
 ## Deployment and safety
 

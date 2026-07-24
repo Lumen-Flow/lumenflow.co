@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 
+import { ClientLogoGrid } from "@/components/sections/client-logo-grid";
+import { ColorBends } from "@/components/ui/color-bends";
+import { BookACallButton } from "@/components/ui/book-a-call-button";
+import { CaseStudiesButton } from "@/components/ui/case-studies-button";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -10,14 +14,60 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <section className="section-spacing">
-      <div className="container-page">
-        <p className="mb-4 text-sm font-medium text-muted">Route: /</p>
-        <h1 className="text-5xl text-balance">{siteConfig.name}</h1>
-        <p className="mt-6 max-w-2xl text-lg">
-          The approved design for this page will be implemented in a later task.
-        </p>
+    <>
+      <section className="relative m-2 min-h-[calc(100svh-1rem)] overflow-hidden rounded-[1.25rem] bg-black text-cool-frost">
+      <ColorBends
+        className="absolute inset-0"
+        colors={["#C8FF00", "#C8FF00", "#C8FF00"]}
+        rotation={90}
+        speed={0.2}
+        scale={0.8}
+        frequency={0.9}
+        warpStrength={1}
+        mouseInfluence={1}
+        noise={0.9}
+        parallax={0.5}
+        iterations={1}
+        intensity={1.5}
+        bandWidth={5}
+        transparent
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 flex min-h-[calc(100svh-1rem)] items-end px-[clamp(1.25rem,5vw,5rem)] pt-32 pb-[clamp(1.5rem,5vw,5rem)]">
+        <div className="relative w-full">
+          <div>
+            <h1 className="text-[clamp(1.5rem,7.5vw,2.5rem)] leading-[1.1]  sm:text-[clamp(2.5rem,5.75vw,10rem)]">
+              <span className="block whitespace-nowrap">
+                Technology, Marketing &amp;
+              </span>
+              <span className="block whitespace-nowrap">
+                Creative built to move as one.
+              </span>
+            </h1>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              <BookACallButton />
+              <CaseStudiesButton />
+            </div>
+          </div>
+
+          <p
+            id="contact"
+            className="mt-8 max-w-[16rem] text-[clamp(0.625rem,0.85vw,1.5rem)] leading-[1.35] text-cool-frost/80 md:absolute md:-top-8 md:right-65 md:mt-0"
+          >
+            We help ambitious businesses turn ideas into useful products, clear
+            brands and growth systems that work together—not as disconnected
+            deliverables.
+          </p>
+        </div>
       </div>
-    </section>
+      </section>
+
+      <ClientLogoGrid />
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
+import { AnimatedHeader } from "@/components/layout/animated-header";
 import { siteConfig } from "@/content/site";
 
 import { apfelGrotezk, apfelGrotezkBrukt, plusJakartaSans } from "./fonts";
@@ -50,7 +50,7 @@ export default function RootLayout({
       <body
         className={`${apfelGrotezk.variable} ${apfelGrotezkBrukt.variable} ${plusJakartaSans.variable} flex min-h-screen flex-col`}
       >
-        <Header />
+        <AnimatedHeader />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
