@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --volt-time: #c8ff00;
+  --abyss-navy: #081c30;
+  --cool-frost: #f0f2f5;
+  --steel-grey: #9ca3af;
+
+  --background: var(--cool-frost);
+  --foreground: var(--abyss-navy);
+  --surface: var(--cool-frost);
+  --muted: var(--steel-grey);
+  --border: var(--steel-grey);
+  --accent: var(--volt-time);
+}
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta);
+  --font-display: var(--font-apfel);
+  --font-display-brukt: var(--font-apfel-brukt);
+
+  --color-volt-time: var(--volt-time);
+  --color-abyss-navy: var(--abyss-navy);
+  --color-cool-frost: var(--cool-frost);
+  --color-steel-grey: var(--steel-grey);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-apfel), sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+picture,
+video,
+canvas {
+  height: auto;
+}
+
+::selection {
+  background: var(--volt-time);
+  color: var(--abyss-navy);
+}
+
+:focus-visible,
+.focus-ring:focus-visible {
+  outline: 2px solid var(--volt-time);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--abyss-navy);
+}
+
+.font-display {
+  font-family: var(--font-apfel), sans-serif;
+}
+
+.font-display-brukt {
+  font-family: var(--font-apfel-brukt), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.container-page {
+  width: min(100%, 90rem);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.section-spacing {
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
