@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 
-import { Footer } from "@/components/layout/footer";
 import { AnimatedHeader } from "@/components/layout/animated-header";
 import { siteConfig } from "@/content/site";
 
@@ -52,7 +51,6 @@ export default function RootLayout({
       >
         <AnimatedHeader />
         <main className="flex-1 bg-cool-forest">{children}</main>
-        <Footer />
       </body>
     </html>
   );

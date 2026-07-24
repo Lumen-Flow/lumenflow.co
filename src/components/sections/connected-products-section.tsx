@@ -34,7 +34,7 @@ const trailImages = [
 
 export function ConnectedProductsSection() {
   return (
-    <section className="h-[100vh] px-[clamp(1.25rem,5vw,2rem)] overflow-hidden bg-cool-frost text-abyss-navy">
+    <section className="h-[100vh] overflow-hidden bg-cool-frost text-abyss-navy">
       <div className="page-gutter grid h-full grid-cols-1 gap-8 py-[clamp(2rem,7vh,5rem)] md:grid-cols-[minmax(0,1.45fr)_minmax(17rem,0.9fr)] md:gap-[clamp(3rem,7vw,8rem)]">
         <div className="flex min-h-0 flex-col justify-between md:justify-start">
           <h2 className="max-w-[15ch] text-[clamp(2.4rem,5vw,5.5rem)] leading-[0.98] tracking-[-0.045em]">

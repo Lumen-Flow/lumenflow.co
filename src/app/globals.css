@@ -131,7 +131,7 @@ canvas {
 }
 
 .page-gutter {
-  padding-inline: clamp(1.25rem, 5vw, 5rem);
+  padding-inline: clamp(1.25rem, 5vw, 20rem);
 }
 
 .section-spacing {

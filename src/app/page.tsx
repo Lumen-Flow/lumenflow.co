@@ -4,7 +4,10 @@ import { ClientLogoGrid } from "@/components/sections/client-logo-grid";
 import { ConnectedProductsSection } from "@/components/sections/connected-products-section";
 import { DisciplineCardsSection } from "@/components/sections/discipline-cards-section";
 import { HomeCaseStudiesSection } from "@/components/sections/home-case-studies-section";
-import { ColorBends } from "@/components/ui/color-bends";
+import { ProcessSection } from "@/components/sections/process-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { ClosingSection } from "@/components/sections/closing-section";
+import  ColorBends  from "@/components/ui/color-bends";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { BlurText } from "@/components/ui/blur-text";
 import { CaseStudiesButton } from "@/components/ui/case-studies-button";
@@ -85,6 +88,9 @@ export default function HomePage() {
       <ConnectedProductsSection />
       <DisciplineCardsSection />
       <HomeCaseStudiesSection />
+      <ProcessSection />
+      {/* <TestimonialsSection /> */}
+      <ClosingSection />
     </>
   );
 }
