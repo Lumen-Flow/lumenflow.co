@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --volt-time: #c8ff00;
+  --volt-time: #C4D931;
   --abyss-navy: #081c30;
   --cool-frost: #f0f2f5;
   --steel-grey: #9ca3af;
@@ -40,12 +40,13 @@
 
 html {
   min-height: 100%;
+  background-color: var(--cool-frost);
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background-color: var(--cool-frost);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -127,6 +128,10 @@ canvas {
   width: min(100%, 90rem);
   margin-inline: auto;
   padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.page-gutter {
+  padding-inline: clamp(1.25rem, 5vw, 20rem);
 }
 
 .section-spacing {
