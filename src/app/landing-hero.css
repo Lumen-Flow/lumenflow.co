@@ -1,0 +1,6 @@
+section:has([data-landing-content]) {
+  position: relative;
+  isolation: isolate;
+  height: 100svh;
+  min-height: 100svh;
+}

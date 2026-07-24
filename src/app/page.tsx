@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import "./landing-hero.css";
+
+
 import { ClientLogoGrid } from "@/components/sections/client-logo-grid";
 import { ConnectedProductsSection } from "@/components/sections/connected-products-section";
 import { DisciplineCardsSection } from "@/components/sections/discipline-cards-section";
@@ -22,11 +25,11 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="relative m-2 min-h-[calc(100svh-1rem)] overflow-hidden rounded-[1.25rem] bg-black text-cool-frost">
+      <section className="relative m-2 min-h-[calc(50svh-1rem)] overflow-hidden rounded-[1.25rem] bg-black text-cool-frost">
       <ColorBends
         className="absolute inset-0"
         colors={["#081c30", "#C4D931","#c8ff00" ]}
-        rotation={90}
+        rotation={130}
         speed={0.2}
         scale={1}
         frequency={0.9}
@@ -44,7 +47,10 @@ export default function HomePage() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex min-h-[calc(100svh-1rem)] items-end px-[clamp(1.25rem,5vw,5rem)] pt-32 pb-[clamp(1.5rem,5vw,5rem)]">
+      <div
+        data-landing-content
+        className="absolute inset-0 z-10 flex h-[100svh] w-full items-end px-[clamp(1.25rem,5vw,5rem)] pt-32 pb-[clamp(1.5rem,5vw,5rem)]"
+      >
         <div className="relative w-full">
           <div>
             <h1 className="text-[clamp(1.5rem,6.5vw,2rem)] leading-[1.1]  sm:text-[clamp(2.5rem,5.75vw,10rem)]">
@@ -90,7 +96,7 @@ export default function HomePage() {
       <HomeCaseStudiesSection />
       <ProcessSection />
       {/* <TestimonialsSection /> */}
-      
+
     </>
   );
 }

@@ -333,7 +333,7 @@ export function AnimatedHeader() {
 
         <div className="relative z-10 flex h-[clamp(3.75rem,6vw,4.5rem)] items-center px-4 sm:px-6">
           <Link
-            className="ml-4 focus-ring shrink-0 rounded-sm [&_img]:h-[clamp(2rem,4vw,2.75rem)] [&_img]:w-auto"
+            className="ml-4 focus-ring shrink-0 rounded-sm [&_img]:h-[clamp(2rem,5vw,3.75rem)] [&_img]:w-auto"
             href="/"
             aria-label={`${siteConfig.name} home`}
           >
@@ -341,8 +341,8 @@ export function AnimatedHeader() {
               src="/brand/Logo-blackbg.png"
               alt={siteConfig.name}
               width={60}
-              height={10}
-              className="h-12 w-auto object-contain"
+              height={50}
+              className="h-20 w-auto object-contain"
               priority
             />
           </Link>

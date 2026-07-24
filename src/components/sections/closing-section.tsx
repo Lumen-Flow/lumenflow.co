@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import ColorBends from "@/components/ui/color-bends";
+import ColorBends from "@/components/ui/footer-color-bends";
 import { ArrowUpRight } from "lucide-react";
 
 import { BlurText } from "@/components/ui/blur-text";
@@ -246,7 +246,10 @@ export function ClosingSection() {
 
         <div className="relative z-10 h-[clamp(6rem,14vw,11rem)] w-[clamp(14rem,32vw,28rem)]">
           <Image
-            src="/brand/Logo-blackbg.png"
+              src="/brand/Logo-blackbg.png"
+              style={{
+                display: "none",
+              }}
             alt="Lumen & Flow"
             fill
             sizes="(max-width: 768px) 14rem, 28rem"
