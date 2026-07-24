@@ -63,12 +63,17 @@ export function AnimatedHeader() {
         ? "60%"
         : "calc(100% - 1.5rem)";
 
+    const getRestingMargin = () =>
+      window.matchMedia("(min-width: 40rem)").matches
+        ? "clamp(1rem, 3vw, 3rem)"
+        : "0.75rem";
+
     const setState = (scrolled: boolean) => {
       surface.dataset.scrolled = String(scrolled);
       contactButton.dataset.scrolled = String(scrolled);
 
       gsap.set(surface, {
-        width: scrolled ? "95%" : getRestingWidth(),
+        width: scrolled ? "75%" : getRestingWidth(),
         backgroundColor: scrolled
           ? "rgba(8, 8, 10, 0.72)"
           : "rgba(240, 242, 245, 0.06)",
@@ -76,7 +81,14 @@ export function AnimatedHeader() {
           ? "rgba(200, 255, 0, 0.18)"
           : "rgba(240, 242, 245, 0.18)",
       });
+      gsap.set(surface, {
+        scaleX: 1,
+        scaleY: 1,
+        marginLeft: scrolled ? "12.5%" : getRestingMargin(),
+        transformOrigin: "center center",
+      });
       gsap.set(contactButton, { width: scrolled ? 48 : 116 });
+      gsap.set(contactButton, { x: 0 });
       gsap.set(contactLabel, {
         autoAlpha: scrolled ? 0 : 1,
         yPercent: scrolled ? 170 : 0,
@@ -136,11 +148,41 @@ export function AnimatedHeader() {
         .to(
           surface,
           {
-            width: scrolled ? "95%" : getRestingWidth(),
+            width: scrolled ? "75%" : getRestingWidth(),
             duration: 0.78,
             ease: "power4.inOut",
           },
           0,
+        )
+        .to(
+          surface,
+          {
+            marginLeft: scrolled ? "12.5%" : getRestingMargin(),
+            duration: 1.05,
+            ease: "elastic.out(1, 0.48)",
+          },
+          0,
+        )
+        .to(
+          surface,
+          {
+            scaleX: scrolled ? 1.022 : 0.982,
+            scaleY: 0.965,
+            transformOrigin: "center center",
+            duration: 0.28,
+            ease: "power2.in",
+          },
+          0,
+        )
+        .to(
+          surface,
+          {
+            scaleX: 1,
+            scaleY: 1,
+            duration: 0.72,
+            ease: "elastic.out(1, 0.38)",
+          },
+          0.27,
         )
         .to(
           contactButton,

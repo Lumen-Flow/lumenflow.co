@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 import { ClientLogoGrid } from "@/components/sections/client-logo-grid";
+import { ConnectedProductsSection } from "@/components/sections/connected-products-section";
+import { DisciplineCardsSection } from "@/components/sections/discipline-cards-section";
 import { ColorBends } from "@/components/ui/color-bends";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
+import { BlurText } from "@/components/ui/blur-text";
 import { CaseStudiesButton } from "@/components/ui/case-studies-button";
 import { siteConfig } from "@/content/site";
 
@@ -18,14 +21,14 @@ export default function HomePage() {
       <section className="relative m-2 min-h-[calc(100svh-1rem)] overflow-hidden rounded-[1.25rem] bg-black text-cool-frost">
       <ColorBends
         className="absolute inset-0"
-        colors={["#C8FF00", "#C8FF00", "#C8FF00"]}
+        colors={["#081c30", "#C4D931","#c8ff00" ]}
         rotation={90}
         speed={0.2}
         scale={0.8}
         frequency={0.9}
         warpStrength={1}
         mouseInfluence={1}
-        noise={0.9}
+        noise={0.3}
         parallax={0.5}
         iterations={1}
         intensity={1.5}
@@ -42,10 +45,20 @@ export default function HomePage() {
           <div>
             <h1 className="text-[clamp(1.5rem,7.5vw,2.5rem)] leading-[1.1]  sm:text-[clamp(2.5rem,5.75vw,10rem)]">
               <span className="block whitespace-nowrap">
-                Technology, Marketing &amp;
+                <BlurText
+                  text="Technology, Marketing &"
+                  delay={85}
+                  direction="bottom"
+                  wrap={false}
+                />
               </span>
               <span className="block whitespace-nowrap">
-                Creative built to move as one.
+                <BlurText
+                  text="Creative built to move as one."
+                  delay={85}
+                  direction="bottom"
+                  wrap={false}
+                />
               </span>
             </h1>
 
@@ -68,6 +81,8 @@ export default function HomePage() {
       </section>
 
       <ClientLogoGrid />
+      <ConnectedProductsSection />
+      <DisciplineCardsSection />
     </>
   );
 }

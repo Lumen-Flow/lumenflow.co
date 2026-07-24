@@ -1,6 +1,6 @@
 .animated-site-header.fluid-glass-surface {
   background: rgb(240 242 245 / 6%);
-  will-change: width, background-color, border-color, box-shadow;
+  will-change: width, transform, background-color, border-color, box-shadow;
 }
 
 .animated-site-header__ripple {
