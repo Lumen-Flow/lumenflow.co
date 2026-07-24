@@ -1,5 +1,7 @@
 "use client";
 
+import { MobileHeaderMenu } from "@/components/layout/mobile-header-menu";
+
 import { gsap } from "gsap";
 import { ArrowUpRight, Send } from "lucide-react";
 import Image from "next/image";
@@ -365,8 +367,9 @@ export function AnimatedHeader() {
             >
               <Send className="size-[1.15rem]" strokeWidth={2.2} />
             </span>
-          </Link>
-        </div>
+        </Link>
+        {/* <MobileHeaderMenu /> */}
+      </div>
       </FluidGlassSurface>
     </header>
   );

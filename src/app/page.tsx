@@ -28,11 +28,11 @@ export default function HomePage() {
         colors={["#081c30", "#C4D931","#c8ff00" ]}
         rotation={90}
         speed={0.2}
-        scale={0.8}
+        scale={1}
         frequency={0.9}
         warpStrength={1}
-        mouseInfluence={1}
-        noise={0.3}
+        mouseInfluence={2}
+        noise={0.9}
         parallax={0.5}
         iterations={1}
         intensity={1.5}
@@ -47,7 +47,7 @@ export default function HomePage() {
       <div className="relative z-10 flex min-h-[calc(100svh-1rem)] items-end px-[clamp(1.25rem,5vw,5rem)] pt-32 pb-[clamp(1.5rem,5vw,5rem)]">
         <div className="relative w-full">
           <div>
-            <h1 className="text-[clamp(1.5rem,7.5vw,2.5rem)] leading-[1.1]  sm:text-[clamp(2.5rem,5.75vw,10rem)]">
+            <h1 className="text-[clamp(1.5rem,6.5vw,2rem)] leading-[1.1]  sm:text-[clamp(2.5rem,5.75vw,10rem)]">
               <span className="block whitespace-nowrap">
                 <BlurText
                   text="Technology, Marketing &"
@@ -90,7 +90,7 @@ export default function HomePage() {
       <HomeCaseStudiesSection />
       <ProcessSection />
       {/* <TestimonialsSection /> */}
-      <ClosingSection />
+      
     </>
   );
 }
