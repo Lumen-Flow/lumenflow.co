@@ -149,8 +149,7 @@ export function DisciplineCardsSection() {
                     loop
                   playsInline
                   disablePictureInPicture
-                    preload="metadata"
-                    aria-hidden="true"
+                  aria-hidden="true"
                   />
 
                   <span

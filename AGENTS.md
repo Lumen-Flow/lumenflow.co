@@ -2,9 +2,10 @@
 
 ## Command policy
 
-- Do not run pnpm commands, shell commands, terminal commands, scripts, builds, tests, linters, formatters, type checks, or validation commands unless the user explicitly authorizes commands in the current request.
-- Use direct file-editing tools for requested changes without invoking commands.
-- When commands are not authorized, clearly report that validation was not run because of this policy.
+- Non-destructive repository inspection and standard development commands are authorized without request-by-request approval.
+- This authorization includes read-only shell commands, `git status`, `git diff`, project searches, local development or production servers, and the existing pnpm lint, typecheck, formatting-check, test, build, and verification scripts.
+- Use pnpm only and prefer the smallest relevant command before running the full validation suite.
+- Do not install or upgrade dependencies, run write-formatters or automated fixers, modify generated lockfiles, deploy, commit, push, or perform destructive operations unless the user explicitly authorizes that action.
 
 ## Stack and workflow
 
@@ -43,7 +44,7 @@ pnpm format:check
 pnpm build
 ```
 
-Do not run these or any other commands unless the user explicitly authorizes commands in the current request. Do not claim a command passed unless it was run.
+These commands are authorized after repository changes. Do not claim a command passed unless it was run.
 
 ## Deployment and safety
 
