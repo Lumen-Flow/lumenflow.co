@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./landing-hero.css";
+import "./mobile-video.css";
 
 
 import { ClientLogoGrid } from "@/components/sections/client-logo-grid";

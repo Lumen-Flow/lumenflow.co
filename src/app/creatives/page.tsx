@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/creatives",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function CreativesPage() {

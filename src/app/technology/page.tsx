@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/technology",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function TechnologyPage() {

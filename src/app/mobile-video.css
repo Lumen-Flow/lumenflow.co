@@ -1,0 +1,7 @@
+@media (hover: none), (pointer: coarse) {
+  video[autoplay] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
