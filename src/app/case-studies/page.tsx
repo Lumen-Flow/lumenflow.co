@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/case-studies",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function CaseStudiesPage() {

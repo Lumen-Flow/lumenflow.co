@@ -129,14 +129,26 @@ export function DisciplineCardsSection() {
                   onFocus={(event) => animateCard(event.currentTarget, true)}
                   onBlur={(event) => animateCard(event.currentTarget, false)}
                 >
-                  <video
+                <video
                     data-card-video
                     className="absolute inset-0 h-full w-full object-cover"
                     src={card.videoSrc}
-                    autoPlay
-                    muted
+                  autoPlay
+                  preload="metadata"
+                  muted
+                  controls={false}
+                  style={{ opacity: 1, visibility: "visible" }}
+                  onCanPlay={(event) => {
+                    const video = event.currentTarget;
+                    video.muted = true;
+                    video.defaultMuted = true;
+                    void video.play().catch(() => {
+                      video.currentTime = 0.001;
+                    });
+                  }}
                     loop
-                    playsInline
+                  playsInline
+                  disablePictureInPicture
                     preload="metadata"
                     aria-hidden="true"
                   />

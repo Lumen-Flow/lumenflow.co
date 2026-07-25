@@ -28,6 +28,10 @@ export async function generateMetadata({
     alternates: {
       canonical: `/case-studies/${caseStudy.slug}`,
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 

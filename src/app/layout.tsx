@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
+
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
 import { AnimatedHeader } from "@/components/layout/animated-header";
 import { siteConfig } from "@/content/site";
@@ -48,6 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body
         className={`${apfelGrotezk.variable} ${apfelGrotezkBrukt.variable} ${plusJakartaSans.variable} flex min-h-screen flex-col bg-cool-frost`}
       >

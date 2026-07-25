@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/marketing",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function MarketingPage() {
