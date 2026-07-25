@@ -1,15 +1,19 @@
-import type { Metadata, Viewport } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
-
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 
 import { AnimatedHeader } from "@/components/layout/animated-header";
+import { CookieConsent } from "@/components/layout/cookie-consent";
+import { ClosingSection } from "@/components/sections/closing-section";
 import { siteConfig } from "@/content/site";
+import { getGoogleConsentBootstrapScript } from "@/lib/cookie-consent";
 
 import { apfelGrotezk, apfelGrotezkBrukt, plusJakartaSans } from "./fonts";
 import "./globals.css";
 import "./scrollbar.css";
-import { ClosingSection } from "@/components/sections/closing-section";
+
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+const googleConsentBootstrap = getGoogleConsentBootstrapScript();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,14 +55,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
+      <head>
+        <Script id="google-consent-mode" strategy="beforeInteractive">
+          {googleConsentBootstrap}
+        </Script>
+      </head>
       <body
         className={`${apfelGrotezk.variable} ${apfelGrotezkBrukt.variable} ${plusJakartaSans.variable} flex min-h-screen flex-col bg-cool-frost`}
       >
         <AnimatedHeader />
-        <main className="flex-1 bg-cool-forest">{children}</main>
+        <main className="bg-cool-forest flex-1">{children}</main>
         <ClosingSection />
+        <CookieConsent />
       </body>
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
     </html>
   );
 }
