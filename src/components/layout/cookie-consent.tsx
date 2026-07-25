@@ -176,16 +176,6 @@ export function CookieConsent() {
         </section>
       ) : null}
 
-      {storedPreferences && !isPreferencesOpen ? (
-        <button
-          className="focus-ring fixed bottom-4 left-4 z-[190] min-h-10 rounded-full border border-cool-frost/20 bg-abyss-navy px-4 text-xs font-semibold text-cool-frost shadow-lg transition-transform hover:-translate-y-0.5"
-          onClick={openPreferences}
-          type="button"
-        >
-          Cookie settings
-        </button>
-      ) : null}
-
       {isPreferencesOpen ? (
         <div
           className="fixed inset-0 z-[210] grid place-items-center overflow-y-auto bg-black/70 p-4 backdrop-blur-sm"
